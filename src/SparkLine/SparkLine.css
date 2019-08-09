@@ -1,0 +1,12 @@
+.spark-line {
+  height: 0.75em;
+  width: 2.5em;
+  display: inline-flex;
+  position: relative;
+}
+
+.spark-line-poly {
+  fill: none;
+  stroke-width: 0.15em;
+  stroke: currentColor;
+}
