@@ -3,6 +3,7 @@
 A React implementation of Edward Tufte's concept of Sparklines.
 
 ![Sparkline](./AnimatedSparkline.gif)
+
 *Animated Sparkline created using `requestAnimationFrame`; demo found in the [animated-sparkline](../../tree/animated-sparkline) branch.*
 
 The Sparkline graphic scales with the font size, and adopts the colour of
