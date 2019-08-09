@@ -28,10 +28,10 @@ function App() {
       <p style={{ fontSize: `${fontSize}px` }}>
         The FTSE100
         <Stock />
-        dipped sharply after several lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. A accusamus blanditiis deserunt dolore ea et harum
-        illo in inventore, ipsam, laborum laudantium nostrum omnis, placeat quae
-        sit tenetur totam voluptate?
+        dipped sharply after several rallies earlier this dolor sit amet,
+        consectetur adipisicing elit. A accusamus blanditiis deserunt dolore ea
+        et harum illo in inventore, ipsam, laborum laudantium nostrum omnis,
+        placeat quae sit tenetur totam voluptate?
       </p>
     </div>
   );
