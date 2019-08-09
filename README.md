@@ -1,8 +1,8 @@
-# Simple React Sparklines
+# Animated Sparklines
 
-A React implementation of Edward Tufte's concept of Sparklines.
+An animated implementation of Edward Tufte's Sparklines concept.
 
-![Sparkline](./Screenshot.png)
+![Moving Sparkline](AnimatedSparkline.gif)
 
 The Sparkline graphic scales with the font size, and adopts the colour of
 the font around it. To override this, props like `style` can be added just like

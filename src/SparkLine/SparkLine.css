@@ -3,6 +3,7 @@
   width: 2.5em;
   display: inline-flex;
   position: relative;
+  margin-left: 0.05em;
 }
 
 .spark-line-poly {

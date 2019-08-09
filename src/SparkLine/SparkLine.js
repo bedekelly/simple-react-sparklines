@@ -14,11 +14,12 @@ function linMap(value, fromLower, fromUpper, toLower, toUpper) {
   return toLower + magnitudeThroughUpperRange;
 }
 
-export default function SparkLine({ data, trailingSpace, ...props }) {
+export default function SparkLine({ data, trailingSpace, min, max, ...props }) {
   const height = 75;
   const width = 270;
-  const dataMax = Math.max(...data);
-  const dataMin = Math.min(...data);
+
+  const dataMax = max === undefined ? Math.max(...data) : max;
+  const dataMin = min === undefined ? Math.min(...data) : min;
   const coords = data.map(d => ({ y: linMap(d, dataMin, dataMax, height, 0) }));
   let xValue = 0;
 
@@ -26,14 +27,16 @@ export default function SparkLine({ data, trailingSpace, ...props }) {
     c.x = xValue;
     xValue += width / data.length;
   });
+  const { x, y } = coords[coords.length - 1];
 
   const points = coords.map(({ x, y }) => `${x},${y}`).join(" ");
-  const viewBox = `-2 -2 ${width + 2} ${height + 2}`;
+  const viewBox = `-2 -2 ${width + 12} ${height + 2}`;
 
   return (
     <>
       <svg className={"spark-line"} viewBox={viewBox} {...props}>
         <polyline className={"spark-line-poly"} points={points} />
+        <circle cx={x} cy={y} r={10} />
       </svg>
       {trailingSpace ? " " : null}
     </>
@@ -42,7 +45,9 @@ export default function SparkLine({ data, trailingSpace, ...props }) {
 
 SparkLine.propTypes = {
   data: PropTypes.arrayOf(PropTypes.number).isRequired,
-  trailingSpace: PropTypes.bool
+  trailingSpace: PropTypes.bool.isRequired,
+  min: PropTypes.number,
+  max: PropTypes.number
 };
 
 SparkLine.defaultProps = {
